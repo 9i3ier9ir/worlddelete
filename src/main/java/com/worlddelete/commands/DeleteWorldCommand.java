@@ -39,9 +39,9 @@ public class DeleteWorldCommand implements CommandExecutor {
 
         sender.sendMessage("§6Deleting world '" + worldName + "'...");
 
-        // Run /mv remove command
-        plugin.getLogger().info("Executing '/mv remove " + worldName + "'");
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "mv remove " + worldName);
+        // Run /mv remove command with force flag
+        plugin.getLogger().info("Executing '/mv remove " + worldName + " -f'");
+        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "mv remove " + worldName + " -f");
 
         // Small delay to allow Multiverse to process
         Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, () -> {
